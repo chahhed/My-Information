@@ -1,0 +1,235 @@
+body {
+    margin: 0;
+    background-color: #03333da1;
+    font-family: sans-serif;
+    background-image: url("https://cdn.wallpapersafari.com/26/4/4OJL3t.jpg");
+    background-size: 100%;
+  }
+  
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    color: cyan;
+    z-index: 1000;
+    cursor: pointer;
+  }
+  
+  .sidebar {
+    position: fixed;
+    right: -220px;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #022c34a3;
+    transition: right 0.4s ease;
+    z-index: 999;
+    box-shadow: -5px 0 20px rgba(0, 255, 255, 0.897);
+  }
+  
+  .sidebar.active {
+    right: 0;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 50px 20px;
+    margin: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 20px 0;
+  }
+  
+  .sidebar ul li a {
+    color: cyan;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #045071;
+    text-shadow: 0 0 5px rgb(5, 97, 97);
+  }
+  
+  .frame {
+    width: 31cm;
+    height: 15cm;
+    margin: 80px auto;
+    border: 2px solid rgb(15, 5, 10);
+    border-radius: 20px;
+    background-color:transparent;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .frame:hover {
+    box-shadow: 0 0 40px 10px rgba(5, 112, 235, 0.9);
+    transform: scale(1.03);
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px;
+    gap: 30px;
+  }
+  
+  .clock-circle {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    width: 120px;
+    height: 120px;
+    border: 4px solid rgb(60, 0, 255);
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 0 0 15px rgb(111, 100, 228), inset 0 0 10px #00f0ff3a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .numbers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .numbers span {
+    position: absolute;
+    color: rgb(1, 20, 20);
+    font-size: 14px;
+    font-weight: bold;
+    left: 47%;
+    top: 44%;
+    transform: rotate(calc(30deg * var(--i)))
+                translateY(-45px)
+                rotate(calc(-30deg * var(--i)));
+    transform-origin: center;
+    text-shadow: 0 0 4px rgb(83, 108, 108);
+  }
+  
+  .hand {
+    position: absolute;
+    background: rgb(5, 1, 18);
+    transform-origin: bottom center;
+    border-radius: 6px;
+    transition: all 0.05s ease-in-out;
+  }
+  
+  .hour {
+    width: 4px;
+    height: 30px;
+    top: 30px;
+    z-index: 2;
+  }
+  
+  .minute {
+    width: 3px;
+    height: 40px;
+    top: 20px;
+    z-index: 3;
+  }
+  
+  .second {
+    width: 2px;
+    height: 50px;
+    background: #e5ff00;
+    top: 10px;
+    z-index: 4;
+  }
+  
+  .center-point {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border: 2px solid cyan;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 5;
+    box-shadow: 0 0 10px cyan;
+  }
+  
+  .wave {
+    font-size: 60px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid rgb(0, 0, 255);
+    animation: typing 2s;
+    color: rgb(18, 12, 15);
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'Great Vibes', cursive;
+    text-shadow: 0 0 10px rgb(7, 75, 176), 0 0 20px rgb(0, 17, 255);
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  .wave span{
+    display: inline-block;
+    cursor: pointer;
+    animation: waveAnim 0.6s ease-in-out infinite;
+  }
+  @keyframes waveAnim{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+  }
+  
+  .search {
+    display: flex;
+    align-items: center;
+    background-color: #81a7c2;
+    color: #1ecfea;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #3b3ff9;
+    transition: all 0.3s ease;
+  }
+  
+  .search :is(input, button) {
+    background: transparent;
+    color: inherit;
+    border: none;
+    outline: none;
+  }
+  
+  .searchinput {
+    width: 0;
+    transition: width 0.5s;
+  }
+  
+  .search:focus-within .searchinput {
+    width: 200px;
+  }
+  
+  .searchbutton {
+    display: grid;
+    place-items: center;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: color 0.25s;
+  }
+  
+  .searchbutton:hover {
+    color: #11c7f0;
+  }
+  
+  ::placeholder {
+    font: inherit;
+    color: #12c6ea;
+  }

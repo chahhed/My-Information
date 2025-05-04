@@ -1,0 +1,117 @@
+:root {
+    --main-color: #2c3e50;
+    --accent-color: #e3ea79;
+    --light-bg: #f9f9f9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #636363, #a2ab58);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contact-container {
+    background: rgba(16, 169, 207, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.contact-container:hover {
+    transform: translateY(-5px);
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.contact-header h1 {
+    color: var(--main-color);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-decoration-line: underline;
+}
+
+.contact-form .form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--main-color);
+    font-weight: 600;
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #1f14bc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+button {
+    background: var(--accent-color);
+    color: rgb(1, 20, 19);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 26px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background: #2bb1c0;
+}
+
+.social-links {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-links a {
+    color: var(--main-color);
+    font-size: 24px;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px;
+    }
+}

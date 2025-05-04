@@ -1,0 +1,117 @@
+:root {
+    --bg-color: #0f535f;
+    --text-color: #0d0115;
+    --card-bg: #924d4dcc;
+    --box-color: #b95d5d;
+    --link-color: #00eaff;
+  }
+  
+  body.dark {
+    --bg-color: #e89d9d9c;
+    --text-color: #e88585;
+    --card-bg: #5395a562;
+    --box-color: #333;
+    --link-color: #06d7f3;
+  }
+  
+  body {
+    font-family: 'Great Vibes', cursive;
+    background: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .controls button,
+  .controls select {
+    padding: 6px 12px;
+    margin-left: 30px;
+    border: none;
+    border-radius: 6px;
+    background: #0ed0f3;
+    color: rgb(10, 109, 73);
+    cursor: pointer;
+  }
+  
+  .profile-container {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(70px);
+    animation: fadeInSlide 1s ease forwards;
+  }
+  
+  @keyframes fadeInSlide {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #c85e64;
+    margin-bottom: 15px;
+  }
+  
+  .name {
+    font-size: 60px;
+    margin-bottom: 5px;
+  }
+  
+  .info-box {
+    background-color: var(--box-color);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+    cursor: pointer;
+    text-decoration: underline;
+    line-height: 20px;
+    text-underline-position: 12px;
+  }
+  
+  .info-box p {
+    margin: 10px 0;
+  }
+  
+  .info-box strong {
+    color: var(--link-color);
+  }
+  
+  .social-links {
+    margin-top: 20px;
+  }
+  
+  .social-links a {
+    text-decoration:underline;
+    color: var(--link-color);
+    margin: 0 5px;
+    font-weight: bold;
+    font-size: larger;
+    transition: color 0.3s;
+  }
+  
+  .social-links a:hover {
+    color: #de5986;
+  }

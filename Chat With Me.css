@@ -1,0 +1,148 @@
+body {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.name-popup {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+.popup-content input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.popup-content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.chat-container {
+    width: 350px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-header {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info h2 {
+    margin: 0;
+    font-size: 18px;
+    color: white;
+}
+
+.status {
+    color: limegreen;
+    font-size: 14px;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 16px;
+    word-break: break-word;
+    animation: popIn 0.4s ease forwards;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.visitor {
+    background-color: rgb(148, 187, 163);
+    align-self: flex-start;
+}
+
+.owner {
+    background-color: #14887c;
+    color: white;
+    align-self: flex-end;
+}
+
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+}
+
+.chat-footer button {
+    background-color: #1dd4d4;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 25px;
+    color: rgb(14, 1, 1);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.chat-footer button:hover {
+    background-color: #218838;
+}
